@@ -12,10 +12,12 @@ type: text/vnd.tiddlywiki
 \end
 
 <$list filter=<<py-is-todo>>>
+<button class="tc-btn-invisible">
   <span class="py-toggle-todo-button">
     <$checkbox tag="done" actions=<<save-actions>>>
       {{||$:/plugins/nico/projectify/ui/buttons/Checkbox}}
     </$checkbox>
   </span>
+</button>
 </$list>
 
