@@ -14,25 +14,25 @@ background-color: $(background)$;
   <$vars background={{{ [<category>get[color]] }}}>
     <div class="py-card-wrapper" style=<<card-style>>>
       <$link overrideClass="py-card" to={{!!title}}>
-	<div class="py-card-options">
-	  {{||$:/plugins/nico/projectify/ui/buttons/ProjectCardSettings}}
-	</div>
-	<div class="py-card-head">
-	  <h3><$text text=<<currentTiddler>>/></h3>
-	  <div class="py-description">
-	    {{!!description}}
-	  </div>
-	</div>
-	<div class="py-project-infos">
-	  {{||$:/plugins/nico/projectify/images/pie}}
-	  <$count filter=<<py-open-todos>>/>
-	  <<lingo OpenTasks>>
-	</div>
-	<$list filter=<<py-has-category>> variable="ignore">
-	  <div class="py-project-category">
-	    <$text text=<<category>>/>
-	  </div>
-	</$list>
+		<div class="py-card-options">
+			{{||$:/plugins/nico/projectify/ui/buttons/ProjectCardSettings}}
+		</div>
+		<div class="py-card-head">
+			<h3><$text text=<<currentTiddler>>/></h3>
+			<div class="py-description">
+				{{!!description}}
+			</div>
+		</div>
+		<div class="py-project-infos">
+			{{||$:/plugins/nico/projectify/images/pie}}
+			<$count filter=<<py-open-todos>>/>
+			<<lingo OpenTasks>>
+		</div>
+		<$list filter=<<py-has-category>> variable="ignore">
+			<div class="py-project-category">
+				<$text text=<<category>>/>
+			</div>
+		</$list>
       </$link>
     </div>
   </$vars>

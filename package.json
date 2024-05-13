@@ -5,8 +5,8 @@
     "dev": "cross-env TIDDLYWIKI_PLUGIN_PATH=./plugins npx nodemon -e tid,multids,js,info --watch plugins ./node_modules/tiddlywiki/tiddlywiki.js . --listen",
     "dev-demo": "cross-env TIDDLYWIKI_PLUGIN_PATH=./plugins npx tiddlywiki editions/demo/ --listen",
     "dev-empty": "cross-env TIDDLYWIKI_PLUGIN_PATH=./plugins npx tiddlywiki editions/empty/ --listen",
-    "build-demo": "cross-env TIDDLYWIKI_PLUGIN_PATH=./plugins npx tiddlywiki editions/demo/ --build index",
-    "build-empty": "cross-env TIDDLYWIKI_PLUGIN_PATH=./plugins npx tiddlywiki editions/empty/ --build index",
+    "build-demo": "cross-env TIDDLYWIKI_PLUGIN_PATH=./plugins npx tiddlywiki editions/demo/ --output docs --build index",
+    "build-empty": "cross-env TIDDLYWIKI_PLUGIN_PATH=./plugins npx tiddlywiki editions/empty/ --output docs --build index",
     "build-readme": "cross-env TIDDLYWIKI_PLUGIN_PATH=./plugins npx tiddlywiki editions/demo/ --output . --build readme",
     "build": "npm run build-demo; npm run build-empty; npm run build-readme"
   },

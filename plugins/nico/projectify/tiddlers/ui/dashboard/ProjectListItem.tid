@@ -10,14 +10,14 @@ type: text/vnd.tiddlywiki
   <li class="py-project">
     <div class="py-project-heading">
       <div class="py-project-title">
-	{{||$:/plugins/nico/projectify/images/pie}} <$link to={{!!title}}><$view field="title"/></$link>
+      	{{||$:/plugins/nico/projectify/images/pie}} <$link to={{!!title}}><$view field="title"/></$link>
       </div>
-      <$list filter=<<category>> variable="ignore">
-	<div class="py-project-category">
-	  <$tiddler tiddler=<<category>>>
-	    {{||$:/plugins/nico/projectify/ui/category/Category}}
-	  </$tiddler>
-	</div>
+      <$list filter="<<category>>" variable="ignore">
+        <div class="py-project-category">
+          <$tiddler tiddler=<<category>>>
+            {{||$:/plugins/nico/projectify/ui/category/Category}}
+          </$tiddler>
+        </div>
       </$list>
     </div>
     <div class="py-project-infos">
