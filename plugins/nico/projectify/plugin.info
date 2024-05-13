@@ -1,9 +1,9 @@
 {
     "title": "$:/plugins/nico/projectify",
     "name": "Projectify",
-    "description": "Simple project management for TiddlyWiki",
+    "description": "Simple and Beautiful project management in TiddlyWiki",
     "author": "NicolasPetton",
-    "version": "0.14.1",
+    "version": "0.14.2",
     "core-version": ">=5.1.22",
     "source": "https://github.com/thaddeusjiang/Projectify",
     "list": "doc/Help changelog LICENSE",

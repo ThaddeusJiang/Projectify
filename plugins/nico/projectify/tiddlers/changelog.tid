@@ -5,6 +5,16 @@ tags:
 title: $:/plugins/nico/projectify/changelog
 type: text/vnd.tiddlywiki
 
+! Release 0.14.2
+
+!! Improvements
+
+* Arrange the Inbox Page
+
+!! Fixes
+
+* fix: Category name containing space are displayed twice in project list
+
 ! Release 0.14.1
 
 !! Improvements
