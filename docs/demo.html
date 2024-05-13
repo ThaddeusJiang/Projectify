@@ -10781,7 +10781,7 @@ Error message and password prompt
     }
 }</pre>
 </div>
-<div author="NicolasPetton" core-version="&gt;=5.1.22" dependents="" description="Simple project management for TiddlyWiki" list="doc/Help changelog LICENSE" name="Projectify" plugin-type="plugin" source="https://github.com/thaddeusjiang/Projectify" title="$:/plugins/nico/projectify" type="application/json" version="0.14.0" revision="0" bag="default">
+<div author="NicolasPetton" core-version="&gt;=5.1.22" dependents="" description="Simple project management for TiddlyWiki" list="doc/Help changelog LICENSE" name="Projectify" plugin-type="plugin" source="https://github.com/thaddeusjiang/Projectify" title="$:/plugins/nico/projectify" type="application/json" version="0.14.1" revision="0" bag="default">
 <pre>{
     &quot;tiddlers&quot;: {
         &quot;$:/plugins/nico/projectify/LICENSE&quot;: {
@@ -11956,7 +11956,7 @@ Error message and password prompt
             &quot;description&quot;: &quot;Projectify -- Toggle the state of the current todo tiddler&quot;,
             &quot;list-before&quot;: &quot;$:/core/ui/Buttons/close&quot;,
             &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
-            &quot;text&quot;: &quot;\\define save-actions()\n  &lt;$action-sendmessage $message=\&quot;tm-auto-save-wiki\&quot;/&gt;\n\\end\n\n&lt;$list filter=&lt;&lt;py-is-todo&gt;&gt;&gt;\n  &lt;span class=\&quot;py-toggle-todo-button\&quot;&gt;\n    &lt;$checkbox tag=\&quot;done\&quot; actions=&lt;&lt;save-actions&gt;&gt;&gt;\n      {{||$:/plugins/nico/projectify/ui/buttons/Checkbox}}\n    &lt;/$checkbox&gt;\n  &lt;/span&gt;\n&lt;/$list&gt;\n\n&quot;
+            &quot;text&quot;: &quot;\\define save-actions()\n  &lt;$action-sendmessage $message=\&quot;tm-auto-save-wiki\&quot;/&gt;\n\\end\n\n&lt;$list filter=&lt;&lt;py-is-todo&gt;&gt;&gt;\n&lt;button class=\&quot;tc-btn-invisible\&quot;&gt;\n  &lt;span class=\&quot;py-toggle-todo-button\&quot;&gt;\n    &lt;$checkbox tag=\&quot;done\&quot; actions=&lt;&lt;save-actions&gt;&gt;&gt;\n      {{||$:/plugins/nico/projectify/ui/buttons/Checkbox}}\n    &lt;/$checkbox&gt;\n  &lt;/span&gt;\n&lt;/button&gt;\n&lt;/$list&gt;\n\n&quot;
         },
         &quot;$:/plugins/nico/projectify/ui/category/Category&quot;: {
             &quot;title&quot;: &quot;$:/plugins/nico/projectify/ui/category/Category&quot;,
@@ -12217,7 +12217,7 @@ Error message and password prompt
             &quot;modified&quot;: &quot;20210205205023525&quot;,
             &quot;tags&quot;: &quot;&quot;,
             &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
-            &quot;text&quot;: &quot;\\define lingo-base() $:/language/projectify/\n\n\\define inbox-count()\n  &lt;$vars currentTiddler=\&quot;Inbox\&quot;&gt;\n    &lt;span class=\&quot;py-count\&quot;&gt;\n      &lt;$count filter=&lt;&lt;py-open-todos&gt;&gt;/&gt;\n    &lt;/span&gt;\n  &lt;/$vars&gt;\n\\end\n\n&lt;h2&gt;{{$:/language/projectify/Inbox}} &lt;&lt;inbox-count&gt;&gt;&lt;/h2&gt;\n\n&lt;label class=\&quot;py-label py-right-aligned\&quot;&gt;\n  &lt;&lt;lingo AddToInbox/Hint&gt;&gt;\n&lt;/label&gt;\n&lt;$vars\n  todo-tags=\&quot;Inbox todo\&quot;\n  placeholder={{$:/language/projectify/AddToInbox/Placeholder}}\n&gt;\n  {{$:/plugins/nico/projectify/ui/forms/AddTodo}}\n&lt;/$vars&gt;\n&lt;$vars currentTiddler=\&quot;Inbox\&quot;&gt;\n  &lt;$macrocall\n    class=\&quot;py-inbox-input\&quot;\n    $name=\&quot;todo-list\&quot;\n    emptyTemplate=\&quot;$:/plugins/nico/projectify/ui/welcome/EmptyInbox\&quot;\n  /&gt;\n&lt;/$vars&gt;\n&quot;
+            &quot;text&quot;: &quot;\\define lingo-base() $:/language/projectify/\n\n\\define inbox-count()\n  &lt;$vars currentTiddler=\&quot;Inbox\&quot;&gt;\n    &lt;span class=\&quot;py-count\&quot;&gt;\n      &lt;$count filter=&lt;&lt;py-open-todos&gt;&gt;/&gt;\n    &lt;/span&gt;\n  &lt;/$vars&gt;\n\\end\n\n&lt;h2&gt;{{$:/language/projectify/Inbox}} &lt;&lt;inbox-count&gt;&gt;&lt;/h2&gt;\n\n&lt;$vars currentTiddler=\&quot;Inbox\&quot;&gt;\n  &lt;$macrocall\n    class=\&quot;py-inbox-input\&quot;\n    $name=\&quot;todo-list\&quot;\n    emptyTemplate=\&quot;$:/plugins/nico/projectify/ui/welcome/EmptyInbox\&quot;\n  /&gt;\n&lt;/$vars&gt;\n\n&lt;label class=\&quot;py-label py-right-aligned\&quot;&gt;\n  &lt;&lt;lingo AddToInbox/Hint&gt;&gt;\n&lt;/label&gt;\n&lt;$vars\n  todo-tags=\&quot;Inbox todo\&quot;\n  placeholder={{$:/language/projectify/AddToInbox/Placeholder}}\n&gt;\n  {{$:/plugins/nico/projectify/ui/forms/AddTodo}}\n&lt;/$vars&gt;&quot;
         },
         &quot;$:/plugins/nico/projectify/ui/project/ArchivedProjectBanner&quot;: {
             &quot;title&quot;: &quot;$:/plugins/nico/projectify/ui/project/ArchivedProjectBanner&quot;,
