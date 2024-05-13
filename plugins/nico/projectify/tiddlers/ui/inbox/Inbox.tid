@@ -1,7 +1,7 @@
 caption: {{$:/plugins/nico/projectify/images/inbox}} {{$:/language/projectify/Inbox}}
 created: 20200425193337699
 modified: 20210205205023525
-tags: 
+tags:
 title: $:/plugins/nico/projectify/ui/inbox/Inbox
 type: text/vnd.tiddlywiki
 
@@ -17,6 +17,14 @@ type: text/vnd.tiddlywiki
 
 <h2>{{$:/language/projectify/Inbox}} <<inbox-count>></h2>
 
+<$vars currentTiddler="Inbox">
+  <$macrocall
+    class="py-inbox-input"
+    $name="todo-list"
+    emptyTemplate="$:/plugins/nico/projectify/ui/welcome/EmptyInbox"
+  />
+</$vars>
+
 <label class="py-label py-right-aligned">
   <<lingo AddToInbox/Hint>>
 </label>
@@ -25,11 +33,4 @@ type: text/vnd.tiddlywiki
   placeholder={{$:/language/projectify/AddToInbox/Placeholder}}
 >
   {{$:/plugins/nico/projectify/ui/forms/AddTodo}}
-</$vars>
-<$vars currentTiddler="Inbox">
-  <$macrocall
-    class="py-inbox-input"
-    $name="todo-list"
-    emptyTemplate="$:/plugins/nico/projectify/ui/welcome/EmptyInbox"
-  />
 </$vars>
