@@ -79,10 +79,10 @@ AbstractDatePickerWidget.prototype.getValue = function() {
 	return $tw.utils.parseDate(this.getTiddler().getFieldString(this.field));
 };
 
-AbstractDatePickerWidget.prototype.setValue = function (date) {
+AbstractDatePickerWidget.prototype.setEndOfDate = function (date) {
 	let updateFields = {
 		title: this.title,
-		[this.field]: date ? this.formatDate(date) : undefined
+		[this.field]: date ? this.endOfDate(date) : undefined
 	};
 
 	this.wiki.addTiddler(
@@ -97,9 +97,10 @@ AbstractDatePickerWidget.prototype.setValue = function (date) {
 	$tw.rootWidget.dispatchEvent({type: "tm-auto-save-wiki"});
 };
 
-AbstractDatePickerWidget.prototype.formatDate = function(date) {
-	// TW format is YYYYMMDDHHmmssSSS
-	return `${date.getFullYear()}${this.formatMonth(date)}${this.formatDay(date)}120000000`;
+AbstractDatePickerWidget.prototype.endOfDate = function(date) {
+	// TW format is [UTC]YYYY0MM0DD0hh0mm0ss0XXX
+		const endOfDay = new Date(date.getFullYear(), date.getMonth(), date.getDate(), 23, 59, 59, 999);
+		return $tw.utils.formatDateString(endOfDay, "[UTC]YYYY0MM0DD0hh0mm0ss0XXX");
 };
 
 AbstractDatePickerWidget.prototype.formatMonth = function(date) {
@@ -143,7 +144,7 @@ var factory = function(getDate, cssClass) {
 		let btn = document.createElement("button");
 		btn.classList.add("tc-btn-invisible", cssClass);
 		btn.addEventListener("click", () => {
-			this.setValue(getDate());
+			this.setEndOfDate(getDate());
 		});
 
 		return btn;
@@ -176,7 +177,7 @@ CalendarWidget.prototype.renderCalendar = function() {
 		keyboardInput: false,
 		i18n: this.getLabels(),
 		onSelect: () => {
-			this.setValue(calendar.getDate());
+			this.setEndOfDate(calendar.getDate());
 			// Close the popup
 			$tw.popup.cancel(0);
 		},
@@ -201,13 +202,13 @@ CalendarWidget.prototype.renderCalendar = function() {
 
 CalendarWidget.prototype.getLabels = function() {
 	return {
-        previousMonth : "Previous Month",
-        nextMonth     : "Next Month",
-        months        : this.getMonthLabels(),
-        monthsShort   : this.getShortMonthLabels(),
-        weekdays      : this.getDayLabels(),
-        weekdaysShort : this.getShortDayLabels(),
-    };
+				previousMonth : "Previous Month",
+				nextMonth     : "Next Month",
+				months        : this.getMonthLabels(),
+				monthsShort   : this.getShortMonthLabels(),
+				weekdays      : this.getDayLabels(),
+				weekdaysShort : this.getShortDayLabels(),
+		};
 };
 
 CalendarWidget.prototype.getMonthLabels = function() {
