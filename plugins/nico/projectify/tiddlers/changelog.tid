@@ -5,6 +5,12 @@ tags:
 title: $:/plugins/nico/projectify/changelog
 type: text/vnd.tiddlywiki
 
+! Release 0.14.3
+
+!! Fixes
+
+* fix: Set wrong date format in the date picker
+
 ! Release 0.14.2
 
 !! Improvements
